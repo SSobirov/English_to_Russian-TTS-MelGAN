@@ -22,4 +22,4 @@ Open Google Colab https://colab.research.google.com/ and upload the .ipynb file 
 9) "pretrained_tts_model" folder contains TTS model trained on English and Russian Datasets.
 
 If you have problems with the contents of the "pretrained_tts_model", please download it from the link.
-Link: https://drive.google.com/open?id=167QyW-NLurvhYzIX8rnzlPbTtSDJpKK_
+Link: "https://drive.google.com/open?id=167QyW-NLurvhYzIX8rnzlPbTtSDJpKK_"
