@@ -1,0 +1,6 @@
+ConfigArgparse
+PyYAML
+nltk
+parallel-wavegan
+torch==1.5.0
+unidecode

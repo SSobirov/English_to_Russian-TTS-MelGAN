@@ -1,25 +1,73 @@
-# English_to_Russian-TTS-MelGAN
-Email: zy22565@nottingham.edu.cn or shohinzya@gmail.com
+# English to Russian TTS with MelGAN
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QCBZ9AV9l467kdlKwsVIyrvU9WauOvuC) The project's demonstration can be run on Google Colab. 
+A research project that demonstrates English-to-Russian voice conversion using a fine-tuned Transformer-based TTS model and a MelGAN vocoder. The repository includes datasets, notebooks for data preparation, training, fine-tuning, and an inference demo.
 
-# Project idea and its aim
-This project aims to perform English to Russian Voice conversion. The project proposes a framework for performing English to Russian voice conversion. The framework consists from finetuned Transformer based TTS model ( target speaker is SEF1 in FYP_Dataset folder) and MelGAN vocoder.
-The dissertation paper of this project can be sent upon request.
+## Diagram
 
-# Usage
-Open Google Colab https://colab.research.google.com/ and upload the .ipynb file from the corresponding folders in this Github repo. For example, if you want to start finetuning stage upload "FinetuneTTS.ipynb" from "Finetune_TTS" to google colab. If you want to try the demo, just click the "Open in Colab" icon above. For more details for each stage check Readme.txt file in each folder. If Readme.txt file is missing, then just upload .ipynb file to Google Colab and follow the instruction in the opened Google Colab notebook.
+```mermaid
+flowchart LR
+    Data[FYP_Dataset] --> Prep[Prepare_dataset]
+    Prep --> Train[Training_TTS]
+    Train --> FineTune[Finetune_TTS]
+    FineTune --> Inference[TTS+MelGAN]
+    Inference --> Audio[Converted samples]
+```
 
-# Folder and their contents
-1) "Finetune_TTS" contains files and codes to finetune pretrained TTS model
-2) "finetuned" folder is already finetuned model
-3) "FYP_Dataset" is the dataset for finetuning TTS model
-4) "Prepare_dataset" is the files and codes for preparing "FYP_Dataset"
-5) "tools" folder contains the binary files that are used during the training process of the TTS model
-6) "Training_TTS" contains files and codes to Train TTS model
-7) "TTS+MelGAN" is the folder containing the demonstration of the framework files
-8) "converted_samples" folder contains original voice (SEF1 from "FYP_Dataset"), converted from English to Russian audio waveform and English to English voice conversion audio waveform(just to check the similarity of the voice)
-9) "pretrained_tts_model" folder contains TTS model trained on English and Russian Datasets.
+## Highlights
 
-If you have problems with the contents of the "pretrained_tts_model", please download it from the link.
-Link: "https://drive.google.com/open?id=167QyW-NLurvhYzIX8rnzlPbTtSDJpKK_". Dont click on the link, but copy the link and paste it. The last "_" character must also be included.
+- Fine-tuned Transformer TTS model for voice conversion.
+- MelGAN vocoder for waveform synthesis.
+- Google Colab notebooks for each stage.
+
+## Quick Start (Colab)
+
+1. Open Google Colab.
+2. Upload the notebook for the stage you want to run.
+3. Execute the cells in order.
+
+Demo notebook:
+
+- `TTS+MelGAN/TTS_MelGAN.ipynb`
+
+## Repository Layout
+
+```
+English_to_Russian-TTS-MelGAN/
+  Finetune_TTS/
+  finetuned/
+  FYP_Dataset/
+  Prepare_dataset/
+  Training_TTS/
+  TTS+MelGAN/
+  converted_samples/
+  pretrained_tts_model/
+  requirements.txt
+```
+
+## Requirements
+
+- Python 3.8+
+- Basic pip packages listed in `requirements.txt`
+- System tools used in notebooks: `sox`, `bc`, `tree`
+
+Install (local environment):
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Note: The notebooks may install additional packages specific to each stage.
+
+## Pretrained Model
+
+If the `pretrained_tts_model` folder is missing or incomplete, download it from:
+
+```
+https://drive.google.com/open?id=167QyW-NLurvhYzIX8rnzlPbTtSDJpKK_
+```
+
+## Contact
+
+For questions about the project or the dissertation, contact the author via email.
